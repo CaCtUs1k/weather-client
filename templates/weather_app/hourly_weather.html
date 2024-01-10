@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hourly Weather</title>
+</head>
+<body>
+    <h1>Hourly Weather Forecast for {{ city }} ({{ date }})</h1>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Temperature (°C)</th>
+            <th>Wind Speed (km/h)</th>
+        </tr>
+        {% for hour in forecast.hour %}
+            <tr>
+                <td>{{ hour.time.split.1 }}</td>
+                <td>{{ hour.temp_c }}</td>
+                <td>{{ hour.wind_kph }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

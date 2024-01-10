@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hourly Weather Form</title>
+</head>
+<body>
+    <h1>Hourly Weather Form</h1>
+    <form method="post" action="{% url 'main:get-hourly-weather' %}">
+        {% csrf_token %}
+        <label for="city">Enter city:</label>
+        <input type="text" name="city" required>
+        <label for="date">Select date(nearly 10 days only!):</label>
+        <input type="date" name="date" required>
+        <button type="submit">Get Hourly Weather</button>
+    </form>
+</body>
+</html>
