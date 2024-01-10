@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Last 5 Requests</title>
+</head>
+<body>
+    <h1>Last 5 Requests</h1>
+    <ul>
+        {% for log in logs %}
+            <li>{{ log.city }} / {{ log.timestamp }} / {{ log.temperature }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
