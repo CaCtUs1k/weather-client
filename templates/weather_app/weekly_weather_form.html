@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Form</title>
+</head>
+<body>
+    <h1>Weather Form</h1>
+    <form method="post" action="{% url 'main:weekly-weather' %}">
+        {% csrf_token %}
+        <label for="city">Enter city:</label>
+        <input type="text" name="city" required>
+        <button type="submit">Get Weekly Weather</button>
+    </form>
+</body>
+</html>

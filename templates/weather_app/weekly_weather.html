@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weekly Weather</title>
+</head>
+<body>
+    <h1>Weekly Weather Forecast for {{ forecast.location.name }}</h1>
+    <ul>
+        {% for day in forecast.forecast.forecastday %}
+            <li>
+                Date: {{ day.date }},
+                Min Temperature: {{ day.day.mintemp_c }}°C,
+                Max Temperature: {{ day.day.maxtemp_c }}°C
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
