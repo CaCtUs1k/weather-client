@@ -7,7 +7,7 @@
     <h1>Last 5 Requests</h1>
     <ul>
         {% for log in logs %}
-            <li>{{ log.city }} / {{ log.timestamp }} / {{ log.temperature }}</li>
+            <li>{{ log.city }} / {{ log.timestamp }} / {{ log.type }}</li>
         {% endfor %}
     </ul>
 </body>
