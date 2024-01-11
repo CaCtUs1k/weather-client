@@ -1,0 +1,56 @@
+p.navbar-brand {
+    margin-bottom: 0;
+}
+
+.weather-container {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.current-weather-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.current-weather-description {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.current-temperature {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.current-wind {
+  font-size: 16px;
+}
+
+
+.weather-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.weather-table th, .weather-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.weather-table th {
+  background-color: #f2f2f2;
+}
+
+.weather-table td:nth-child(3), .weather-table th:nth-child(3),
+.weather-table td:nth-child(4), .weather-table th:nth-child(4) {
+  text-align: center;
+}

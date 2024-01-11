@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Weekly Weather{% endblock %}
+
+{% block content %}
+  <div class="weather-container">
+    <h1>Weekly Weather Forecast for {{ forecast.location.name }}</h1>
+    <table class="weather-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Min Temperature (°C)</th>
+          <th>Max Temperature (°C)</th>
+          <th>Precipitation Probability (%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for day in forecast.forecast.forecastday %}
+          <tr>
+            <td>{{ day.date }}</td>
+            <td>{{ day.day.mintemp_c }}</td>
+            <td>{{ day.day.maxtemp_c }}</td>
+            <td>{{ day.day.daily_chance_of_rain }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
+

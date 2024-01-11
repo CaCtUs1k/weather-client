@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block title %}Hourly Weather Form{% endblock %}
+
+{% block content %}
+  <h1>Hourly Weather</h1>
+  <form method="post" action="{% url 'main:hourly-weather' %}" class="form">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <label for="city">Enter city:</label>
+    <input type="text" name="city" required class="form-control">
+    <label for="date">Select date (nearly 10 days only!):</label>
+    <input type="date" name="date" required class="form-control">
+    <button type="submit" class="btn btn-primary mt-4">Get Hourly Weather</button>
+  </form>
+{% endblock %}
