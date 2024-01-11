@@ -3,7 +3,7 @@
 {% block title %}Current Weather{% endblock %}
 
 {% block content %}
-  <div class="current-weather-container">
+  <div class="weather-container">
     <h1>Current Weather for {{ forecast.location.name }}</h1>
     <img class="current-weather-icon" src="{{ forecast.current.condition.icon }}" alt="Weather Icon">
     <p class="current-weather-description">{{ forecast.current.condition.text }}</p>
