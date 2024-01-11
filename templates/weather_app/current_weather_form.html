@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Weather Form</title>
-</head>
-<body>
-    <h1>Weather Form</h1>
-    <form method="post" action="{% url 'main:current-weather' %}">
-        {% csrf_token %}
-        <label for="city">Enter city:</label>
-        <input type="text" name="city" required>
-        <button type="submit">Get Weather Report</button>
-    </form>
-</body>
-</html>
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
+
+{% block title %}Current Weather Form{% endblock %}
+
+{% block content %}
+  <h1>Current Weather</h1>
+  <form method="post" action="{% url 'main:current-weather' %}" class="form">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <label for="city">Enter city:</label>
+    <input type="text" name="city" required class="form-control">
+    <button type="submit" class="btn btn-primary mt-4">Get Weather Report</button>
+  </form>
+{% endblock %}

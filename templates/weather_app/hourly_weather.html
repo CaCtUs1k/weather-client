@@ -1,23 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Hourly Weather</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Hourly Weather{% endblock %}
+
+{% block content %}
+  <div class="weather-container">
     <h1>Hourly Weather Forecast for {{ city }} ({{ date }})</h1>
-    <table>
+    <table class="weather-table">
+      <thead>
         <tr>
-            <th>Time</th>
-            <th>Temperature (°C)</th>
-            <th>Wind Speed (km/h)</th>
+          <th>Time</th>
+          <th>Temperature (°C)</th>
+          <th>Wind Speed (km/h)</th>
         </tr>
+      </thead>
+      <tbody>
         {% for hour in forecast.hour %}
-            <tr>
-                <td>{{ hour.time.split.1 }}</td>
-                <td>{{ hour.temp_c }}</td>
-                <td>{{ hour.wind_kph }}</td>
-            </tr>
+          <tr>
+            <td>{{ hour.time.split.1 }}</td>
+            <td>{{ hour.temp_c }}</td>
+            <td>{{ hour.wind_kph }}<span class="wind-direction ml-3" style="display: inline-block;
+              transform: rotate({{ hour.wind_degree }}deg);
+              transition: transform 0.5s ease;">&#8593;</span></td>
+          </tr>
         {% endfor %}
+      </tbody>
     </table>
-</body>
-</html>
+  </div>
+{% endblock %}
+
